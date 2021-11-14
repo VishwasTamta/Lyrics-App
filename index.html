@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LyricsApp</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lyrics Search</h1>
+                <form action="#">
+                <div class="searchDiv">
+                    <input type="text" id="searchID" class="search" placeholder="Enter artist or song name...">
+                    <button onclick="getApi()" class="btn">Submit</button>
+                </div>
+            </form>
+        </header>
+    </div>
+    <div id="resultTxt">Results will be displayed here</div>
+    <Table class="resTable" id="result"></Table>
+</body>
+</html>
