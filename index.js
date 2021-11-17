@@ -14,22 +14,25 @@ function show(data ,a){
         if(r == undefined){
             continue
         }
+        
         tab += `<tr>
                     <td colspan="2"><strong>${r.artist.name}</strong> ${" - " + r.title}</p></td>
                     <td><button onclick="getLyrics('${r.artist.name}', '${r.title}')" class="lyricBtn">Get Lyrics</button></td>
                 </tr>`;
-        // Setting inner html
-        document.getElementById("result").innerHTML = tab;
-    }
+                // Setting inner html
+                document.getElementById("result").innerHTML = tab;
+            }
+            // document.getElementById("result").innerHTML += '<tr><td><button id="nextBtn">Next</button></td></tr>'
 }
 
 async function getLyrics(artist, title){
     let url = `https://api.lyrics.ovh/v1/${artist}/${title}`
     const response = await fetch(url) 
     var data = await response.json();
-    var lyrics = data.lyrics.replace(/\n/g, "<br>")
-
+    // var lyrics = data.lyrics.replace(/\n/g, "<br>")
+    var lyrics = data.lyrics
+    lyrics = data.lyrics.replaceAll("\n", "<br>")
     console.log(lyrics)
-    document.getElementById('result').innerHTML = `<h3><strong>${artist} -</strong></h3> ${title}<p>${lyrics}</p>`
+    document.getElementById('result').innerHTML = `<p><strong>${artist} -</strong> <span>${title}</span></p><p>${lyrics}</p>`
 }
 

@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
     display: flex;
     flex-direction: column;
@@ -39,8 +43,14 @@ header::after{
     position: relative;
     display: flex;
     align-items: center;
-    width: 500px;
+    width: 100%;
     z-index: 1;
+}
+
+@media only screen and (min-width: 500px){
+    .searchDiv{
+        width: 500px;
+    }
 }
 
 .search{
@@ -95,4 +105,16 @@ h3{
 
 td{
     vertical-align: top;
+}
+
+p{
+    text-align: center;
+}
+
+p strong, p span{
+    font-size: 30px;
+}
+
+#nextBtn{
+    
 }
